@@ -1,0 +1,44 @@
+{
+  "name": "json-grid",
+  "version": "0.0.1",
+  "description": "A library to convert JSON files into interactive HTML grids (tables)",
+  "main": "dist/JSONGrid.js",
+  "unpkg": "dist/JSONGrid.min.js",
+  "scripts": {
+    "test": "jest . --passWithNoTests",
+    "lint": "eslint *.js",
+    "clean": "rm dist/*",
+    "build": "uglifyjs JSONGrid.js -o ./dist/JSONGrid.min.js -c -m && cp ./{json-grid.css,JSONGrid.js} dist/",
+    "prepublish": "npm run lint && npmr run test && && npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/araujoigor/json-grid.git"
+  },
+  "keywords": [
+    "JSON",
+    "json-grid",
+    "json-table",
+    "JSON grid",
+    "JSON table",
+    "JSON to table"
+  ],
+  "author": "Igor Araujo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/araujoigor/json-grid/issues"
+  },
+  "homepage": "https://github.com/araujoigor/json-grid#readme",
+  "devDependencies": {
+    "eslint": "^6.7.0",
+    "eslint-plugin-compat": "^3.3.0",
+    "jest": "^24.9.0",
+    "uglify-js": "^3.6.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "browserslist": [
+    "cover 99% and ie >= 9"
+  ]
+}
