@@ -4,7 +4,7 @@ JSON Grid is a open source javascript library meant to be run in the browser tha
 
 ## Instalation
 
-In order to install, just require the package through `unpkg` (https://unpkg/json-grid/) and use the `JSONGrid` object to generate your grid.
+In order to install, just require the package through `unpkg` (https://unpkg.com/@araujoigor/json-grid) and use the `JSONGrid` object to generate your grid.
 
 ## Usage
 
@@ -27,8 +27,8 @@ A simple usage case would be:
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JSON Grid</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/json-grid/json-grid.css">
-    <script src="https://unpkg.com/json-grid/JSONGrid.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@araujoigor/json-grid@0.0.1/dist/json-grid.css">
+    <script src="https://unpkg.com/@araujoigor/json-grid@0.0.1/dist/JSONGrid.min.js"></script>
   </head>
 
   <body>

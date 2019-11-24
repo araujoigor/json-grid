@@ -1,5 +1,5 @@
 {
-  "name": "json-grid",
+  "name": "@araujoigor/json-grid",
   "version": "0.0.1",
   "description": "A library to convert JSON files into interactive HTML grids (tables)",
   "main": "dist/JSONGrid.js",
@@ -7,9 +7,9 @@
   "scripts": {
     "test": "jest . --passWithNoTests",
     "lint": "eslint *.js",
-    "clean": "rm dist/*",
+    "clean": "rm dist/* || true",
     "build": "uglifyjs JSONGrid.js -o ./dist/JSONGrid.min.js -c -m && cp ./{json-grid.css,JSONGrid.js} dist/",
-    "prepublish": "npm run lint && npmr run test && && npm run clean && npm run build"
+    "prepublish": "npm run lint && npm run test && npm run clean && npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
