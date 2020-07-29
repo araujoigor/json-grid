@@ -1,6 +1,6 @@
 {
   "name": "@araujoigor/json-grid",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A library to convert JSON files into interactive HTML grids (tables)",
   "main": "dist/JSONGrid.js",
   "unpkg": "dist/JSONGrid.min.js",
