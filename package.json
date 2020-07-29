@@ -8,8 +8,8 @@
     "test": "jest . --passWithNoTests",
     "lint": "eslint *.js",
     "clean": "rm dist/* || true",
-    "build": "uglifyjs JSONGrid.js -o ./dist/JSONGrid.min.js -c -m && cp ./{json-grid.css,JSONGrid.js} dist/",
-    "prepublish": "npm run lint && npm run test && npm run clean && npm run clean && npm run build"
+    "build": "mkdir -p dist/ && uglifyjs JSONGrid.js -o ./dist/JSONGrid.min.js -c -m && cp ./{json-grid.css,JSONGrid.js} dist/",
+    "prepublish": "npm run lint && npm run test && npm run clean && npm run build"
   },
   "repository": {
     "type": "git",
