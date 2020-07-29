@@ -109,20 +109,21 @@ JSONGrid.prototype.processObject = function () {
     var keyTd = DOMHelper.createElement('td', 'string', 'rowName');
     var value = that.data[key];
     var tdType = typeof value;
+    var tdValue;
 
     if (tdType === 'object' && value) {
       var grid = new JSONGrid(value);
-      value = grid.generateDOM();
+      tdValue = grid.generateDOM();
     } else {
-      value = DOMHelper.createElement('span', tdType, 'value');
-      value.textContent = '' + that.data[key];
+      tdValue = DOMHelper.createElement('span', tdType, 'value');
+      tdValue.textContent = '' + value;
     }
 
     var valTd = DOMHelper.createElement('td', tdType);
 
     keyTd.textContent = key;
 
-    valTd.appendChild(value);
+    valTd.appendChild(tdValue);
     tr.appendChild(keyTd);
     tr.appendChild(valTd);
 
