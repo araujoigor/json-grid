@@ -110,7 +110,7 @@ JSONGrid.prototype.processObject = function () {
     var value = that.data[key];
     var tdType = typeof value;
 
-    if (tdType === 'object') {
+    if (tdType === 'object' && value) {
       var grid = new JSONGrid(value);
       value = grid.generateDOM();
     } else {
