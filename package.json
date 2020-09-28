@@ -39,6 +39,6 @@
     "dist"
   ],
   "browserslist": [
-    "cover 99% and ie >= 9"
+    "cover 99% and ie >= 10"
   ]
 }
