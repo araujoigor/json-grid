@@ -1,43 +1,45 @@
-body {
-    font-family: 'Roboto Mono', monospace;
-    font-size: 12px;
+.json-grid-container {
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
 }
 
-th, td {
-    text-align: left;
-    padding: 1px 10px 1px 5px;
-    border: 0.5px solid rgb(224, 224, 224);
-    vertical-align: top;
+.json-grid-container th,
+.json-grid-container td {
+  text-align: left;
+  padding: 1px 10px 1px 5px;
+  border: 0.5px solid rgb(224, 224, 224);
+  vertical-align: top;
 }
 
-th, td.rowName {
-    font-weight: 500;
-    color: rgb(56, 110, 180);
-    background-color: rgb(224, 224, 224);
+.json-grid-container th,
+.json-grid-container td.rowName {
+  font-weight: 500;
+  color: rgb(56, 110, 180);
+  background-color: rgb(224, 224, 224);
 }
 
-table {
-    border: 1px solid rgb(224, 224, 224);
-    border-radius: 5px;
-    border-spacing: 0;
-    margin: 5px;
-    -webkit-box-shadow: 5px 4px 6px 0px rgba(176,176,176,0.5);
-    -moz-box-shadow: 5px 4px 6px 0px rgba(176,176,176,0.5);
-    box-shadow: 5px 4px 6px 0px rgba(176,176,176,0.75);
+.json-grid-container table {
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 5px;
+  border-spacing: 0;
+  margin: 5px;
+  -webkit-box-shadow: 5px 4px 6px 0px rgba(176, 176, 176, 0.5);
+  -moz-box-shadow: 5px 4px 6px 0px rgba(176, 176, 176, 0.5);
+  box-shadow: 5px 4px 6px 0px rgba(176, 176, 176, 0.75);
 }
 
-table.shrinked {
-    display: none;
+.json-grid-container table.shrinked {
+  display: none;
 }
 
-span.string {
-    color: #a31515;
+.json-grid-container span.string {
+  color: #a31515;
 }
 
-span.number {
-    color: #09885a;
+.json-grid-container span.number {
+  color: #09885a;
 }
 
-span.boolean {
-    color: #0000ff;
+.json-grid-container span.boolean {
+  color: #0000ff;
 }
