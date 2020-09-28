@@ -168,7 +168,7 @@ JSONGrid.prototype.generateDOM = function () {
   return container;
 };
 
-JSONGrid.prototype.render = function (cb) {
+JSONGrid.prototype.render = function () {
   if (!this.container || !this.data) {
     return;
   }
