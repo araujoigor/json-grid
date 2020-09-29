@@ -1,6 +1,7 @@
 .json-grid-container {
   font-family: "Roboto Mono", monospace;
   font-size: 12px;
+  display: inline-block;
 }
 
 .json-grid-container th,
