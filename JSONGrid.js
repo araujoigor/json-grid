@@ -4,6 +4,7 @@ var DOMHelper = {
   EXPANDER_TARGET_ATTRIBUTE: 'data-target-id',
   TABLE_SHRINKED_CLASSNAME: 'shrinked',
   JSON_GRID_CONTAINER_CLASSNAME: 'json-grid-container',
+  JSON_GRID_ELEMENT_CONTAINER_CLASSNAME: 'json-grid-element-container',
   createElement: function (type, valueType, additionalClasses, id) {
     var element = document.createElement(type);
     var classes = additionalClasses || [];
@@ -151,7 +152,10 @@ JSONGrid.prototype.generateDOM = function () {
     return span;
   }
 
-  var container = DOMHelper.createElement('div', 'container');
+  var container = DOMHelper.createElement(
+    'div',
+    DOMHelper.JSON_GRID_ELEMENT_CONTAINER_CLASSNAME
+  );
   var tableId = 'table-' + this.instanceNumber;
   var intialClasses = this.instanceNumber !== 0 ? [DOMHelper.TABLE_SHRINKED_CLASSNAME] : [];
   var table = DOMHelper.createElement('table', 'table', intialClasses, tableId);
