@@ -20,6 +20,20 @@ var DOMHelper = {
 
     return element;
   },
+  createJsonGridContainerElement: function (data, type, valueType, additionalClasses, id) {
+    var value = typeof data === 'object' && data
+      ? new JSONGrid(data).generateDOM()
+      : DOMHelper.createElement('span', typeof data, 'value');
+
+    if (!value.innerHTML) {
+      value.textContent = '' + data;
+    }
+
+    var container = DOMHelper.createElement(type, valueType, additionalClasses, id);
+    container.appendChild(value);
+
+    return container;
+  },
   createExpander: function (dataItems, target) {
     var expander = DOMHelper.createElement('span', 'expander');
     expander.textContent = '[' + DOMHelper.getExpanderSign(target) + '] ' + dataItems + ' items';
@@ -59,12 +73,15 @@ JSONGrid.prototype.processArray = function () {
     return acc.concat(keys);
   }, []);
 
+  // -- Remove duplicates
   keys = keys.filter(function (value, idx) {
     return keys.indexOf(value) === idx;
   });
 
   var headers = DOMHelper.createElement('tr');
-  headers.appendChild(DOMHelper.createElement('th'))
+  headers.appendChild(DOMHelper.createElement('th'));
+  
+  // -- Add object keys as headers
   keys.forEach(function (value) {
     var td = DOMHelper.createElement('th');
     td.textContent = value.toString();
@@ -73,19 +90,13 @@ JSONGrid.prototype.processArray = function () {
 
   var rows = this.data.map(function (obj, index) {
     var tr = DOMHelper.createElement('tr')
-    var firstTd = DOMHelper.createElement('td', typeof index);
+    tr.appendChild(DOMHelper.createJsonGridContainerElement(index, 'td', typeof index));
 
-    firstTd.appendChild(new JSONGrid(index).generateDOM());
-    tr.appendChild(firstTd);
-
-    keys.forEach(function (key, keyIdx) {
-      var td = DOMHelper.createElement('td', typeof obj, 'table-wrapper');
+    keys.forEach(function (key) {
       var value = (obj[key] === undefined || obj[key] === null)
         ? '' + obj[key]
-        : obj[key]
-        ;
-      td.appendChild(new JSONGrid(value).generateDOM());
-      tr.appendChild(td);
+        : obj[key];
+      tr.appendChild(DOMHelper.createJsonGridContainerElement(value, 'td', typeof obj, 'table-wrapper'));
     });
 
     return tr;
@@ -110,22 +121,10 @@ JSONGrid.prototype.processObject = function () {
     var tr = DOMHelper.createElement('tr')
     var keyTd = DOMHelper.createElement('td', 'string', 'rowName');
     var value = that.data[key];
-    var tdType = typeof value;
-    var tdValue;
-
-    if (tdType === 'object' && value) {
-      var grid = new JSONGrid(value);
-      tdValue = grid.generateDOM();
-    } else {
-      tdValue = DOMHelper.createElement('span', tdType, 'value');
-      tdValue.textContent = '' + value;
-    }
-
-    var valTd = DOMHelper.createElement('td', tdType);
+    var valTd = DOMHelper.createJsonGridContainerElement(value, 'td', typeof value);
 
     keyTd.textContent = key;
 
-    valTd.appendChild(tdValue);
     tr.appendChild(keyTd);
     tr.appendChild(valTd);
 
