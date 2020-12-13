@@ -13,7 +13,10 @@
 }
 
 .json-grid-container th,
-.json-grid-container td.rowName {
+.json-grid-container th.header,
+.json-grid-container th.header span,
+.json-grid-container td.header,
+.json-grid-container td.header span {
   font-weight: 500;
   color: rgb(56, 110, 180);
   background-color: rgb(224, 224, 224);
@@ -43,4 +46,8 @@
 
 .json-grid-container span.boolean {
   color: #0000ff;
+}
+
+.json-grid-container span.undefined {
+  color: #cccccc;
 }

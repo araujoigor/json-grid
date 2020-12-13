@@ -20,7 +20,9 @@ var DOMHelper = {
 
     return element;
   },
-  createJsonGridContainerElement: function (data, type, valueType, additionalClasses, id) {
+  createJsonGridContainerElement: function (data, domType, dataType, additionalClasses, id) {
+    // -- Anything that is not a valid object/array should be stringified 
+    // -- (undefined and null included)
     var value = typeof data === 'object' && data
       ? new JSONGrid(data).generateDOM()
       : DOMHelper.createElement('span', typeof data, 'value');
@@ -29,7 +31,7 @@ var DOMHelper = {
       value.textContent = '' + data;
     }
 
-    var container = DOMHelper.createElement(type, valueType, additionalClasses, id);
+    var container = DOMHelper.createElement(domType, dataType, additionalClasses, id);
     container.appendChild(value);
 
     return container;
@@ -68,35 +70,40 @@ function JSONGrid(data, container) {
 }
 
 JSONGrid.prototype.processArray = function () {
-  var keys = this.data.reduce(function (acc, val) {
-    var keys = Object.keys(val);
-    return acc.concat(keys);
-  }, []);
-
-  // -- Remove duplicates
-  keys = keys.filter(function (value, idx) {
-    return keys.indexOf(value) === idx;
-  });
+  var keys = this.data
+    .reduce(function (acc, val) {
+      if (typeof val !== 'object') {
+        return acc;
+      }
+      var keys = Object.keys(val);
+      return acc.concat(keys);
+    }, [])
+    // -- Remove duplicates
+    .filter(function (value, idx, reducedKeys) {
+      return reducedKeys.indexOf(value) === idx;
+    });
 
   var headers = DOMHelper.createElement('tr');
+  headers.appendChild(DOMHelper.createElement('th'));
+
+  // -- Add value as header (for primitive, non-object, types)
+  // -- otherwise, they are not shown or shown as arrays (strings)
   headers.appendChild(DOMHelper.createElement('th'));
   
   // -- Add object keys as headers
   keys.forEach(function (value) {
-    var td = DOMHelper.createElement('th');
-    td.textContent = value.toString();
-    headers.appendChild(td);
+    headers.appendChild(
+      DOMHelper.createJsonGridContainerElement(value, 'th', typeof value, 'header')
+    );
   });
 
   var rows = this.data.map(function (obj, index) {
     var tr = DOMHelper.createElement('tr')
-    tr.appendChild(DOMHelper.createJsonGridContainerElement(index, 'td', typeof index));
+    tr.appendChild(DOMHelper.createJsonGridContainerElement(index, 'td', typeof index, 'header'));
+    tr.appendChild(DOMHelper.createJsonGridContainerElement(obj, 'td', typeof obj));
 
     keys.forEach(function (key) {
-      var value = (obj[key] === undefined || obj[key] === null)
-        ? '' + obj[key]
-        : obj[key];
-      tr.appendChild(DOMHelper.createJsonGridContainerElement(value, 'td', typeof obj, 'table-wrapper'));
+      tr.appendChild(DOMHelper.createJsonGridContainerElement(obj[key], 'td', typeof obj, 'table-wrapper'));
     });
 
     return tr;
@@ -109,25 +116,15 @@ JSONGrid.prototype.processArray = function () {
 }
 
 JSONGrid.prototype.processObject = function () {
-  var keys = Object.keys(this.data);
-  var headers = DOMHelper.createElement('tr');
-  keys.forEach(function (value) {
-    var td = DOMHelper.createElement('td');
-    td.textContent = '' + value;
-    headers.appendChild(td);
-  });
-  var that = this;
-  var rows = keys.map(function (key, index) {
+  var data = this.data;
+  var rows = Object.keys(this.data).map(function (key) {
     var tr = DOMHelper.createElement('tr')
-    var keyTd = DOMHelper.createElement('td', 'string', 'rowName');
-    var value = that.data[key];
-    var valTd = DOMHelper.createJsonGridContainerElement(value, 'td', typeof value);
-
-    keyTd.textContent = key;
-
-    tr.appendChild(keyTd);
-    tr.appendChild(valTd);
-
+    tr.appendChild(
+      DOMHelper.createJsonGridContainerElement(key, 'td', 'string', 'header')
+    );
+    tr.appendChild(
+      DOMHelper.createJsonGridContainerElement(data[key], 'td', typeof value)
+    );
     return tr;
   });
 
@@ -184,4 +181,10 @@ JSONGrid.prototype.render = function () {
   this.container.classList.add(DOMHelper.JSON_GRID_CONTAINER_CLASSNAME);
 };
 
-window.JSONGrid = JSONGrid;
+if (typeof window !== 'undefined') {
+  window.JSONGrid = JSONGrid;
+}
+
+if (typeof module !== 'undefined') {
+  module.exports = JSONGrid;
+}
