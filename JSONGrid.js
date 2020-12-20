@@ -10,7 +10,11 @@ var DOMHelper = {
     var classes = additionalClasses || [];
 
     if (!Array.isArray(classes)) classes = [classes];
-    if (valueType) classes.push(valueType);
+    if (valueType) {
+      // -- Copy by value to not mutate the passed parameter
+      classes = classes.slice();
+      classes.push(valueType);
+    }
 
     DOMTokenList.prototype.add.apply(element.classList, classes);
 
