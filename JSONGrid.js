@@ -29,13 +29,15 @@ var DOMHelper = {
     domType,
     dataType,
     additionalClasses,
-    id
+    id,
+    _JSONGrid
   ) {
+    var __JSONGrid = _JSONGrid || JSONGrid;
     // -- Anything that is not a valid object/array should be stringified
     // -- (undefined and null included)
     var value =
       typeof data === 'object' && data
-        ? new JSONGrid(data).generateDOM()
+        ? new __JSONGrid(data).generateDOM()
         : DOMHelper.createElement('span', typeof data, 'value');
 
     if (!value.innerHTML) {
