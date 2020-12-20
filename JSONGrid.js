@@ -232,5 +232,6 @@ if (typeof window !== 'undefined') {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = JSONGrid;
+  module.exports.JSONGrid = JSONGrid;
+  module.exports.DOMHelper = DOMHelper;
 }
