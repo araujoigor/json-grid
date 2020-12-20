@@ -1,6 +1,15 @@
 {
-    "extends": ["plugin:compat/recommended"],
-    "env": {
-      "browser": true
+  "extends": ["plugin:compat/recommended", "plugin:prettier/recommended"],
+  "env": {
+    "browser": true
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.js"],
+      "env": {
+        "jest": true,
+        "es6": true
+      }
     }
-  }
+  ]
+}
