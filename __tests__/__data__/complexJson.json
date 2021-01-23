@@ -1,0 +1,166 @@
+[
+  {
+    "_id": "5fd26bd6eaa1e4038be4d30b",
+    "index": 0,
+    "guid": "5cd8ac75-a5a8-41e1-8785-4df8a11adee1",
+    "isActive": true,
+    "balance": "$3,009.86",
+    "picture": "http://placehold.it/32x32",
+    "age": 23,
+    "eyeColor": "green",
+    "name": "Gardner Tate",
+    "gender": "male",
+    "company": null,
+    "email": "gardnertate@frolix.com",
+    "phone": "+1 (954) 477-3385",
+    "address": "880 Cornelia Street, Kingstowne, Guam, 5730",
+    "about": "Adipisicing ut proident reprehenderit dolore reprehenderit et laborum dolor. Culpa ullamco fugiat excepteur fugiat sint aliquip occaecat tempor aute excepteur pariatur anim non. Esse proident elit voluptate nostrud labore culpa aute duis officia. Magna consequat nostrud amet magna ipsum commodo nisi do laboris aute officia eu nulla ut. Tempor irure nisi commodo magna ut Lorem ad anim mollit velit ullamco. Id et do consequat pariatur do sit.\r\n",
+    "registered": "2014-05-02T12:58:36 -02:00",
+    "latitude": 73.510048,
+    "longitude": 36.28267,
+    "tags": [
+      "deserunt",
+      "commodo",
+      "culpa",
+      "reprehenderit",
+      "do",
+      "dolore",
+      "est",
+      null
+    ],
+    "wow": [],
+    "f": {},
+    "friends": [
+      {
+        "id": 0,
+        "name": "Kenya Holman",
+        "luckyNumbers": [576, 716, 657, 838, 887, 538, 486, 254, 587, 771],
+        "moreFriends": [
+          false,
+          "string",
+          [367, 791, 325, 390, 416, 114, 534, 296, 187, 350],
+          {
+            "id": 2,
+            "name": "Mcmahon Bullock",
+            "luckyNumbers": [378, 77, 152, 114, 998, 493, 148, 675, 799, 121]
+          },
+          true,
+          [224, 411, 269, 805, 168, 582, 226, 747, 968, 348],
+          false
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Sharlene Rodgers",
+        "luckyNumbers": [879, 311, 866, 939, 906, 580, 61, 744, 326, 784],
+        "moreFriends": [
+          true,
+          [763, 873, 461, 881, 700, 486, 739, 37, 428, 990],
+          {
+            "id": 2,
+            "name": "Opal Howe",
+            "luckyNumbers": [124, 926, 71, 608, 782, 288, 192, 322, 846, 710]
+          },
+          false,
+          [779, 635, 33, 724, 570, 360, 529, 344, 58, 633],
+          false
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Cote Howard",
+        "luckyNumbers": [696, 970, 507, 616, 617, 811, 818, 477, 980, 565],
+        "moreFriends": [
+          false,
+          [142, 618, 249, 34, 333, 681, 88, 950, 491, 153],
+          {
+            "id": 2,
+            "name": "Warren Hale",
+            "luckyNumbers": [755, 308, 35, 778, 369, 711, 576, 994, 851, 81]
+          },
+          false,
+          [819, 840, 771, 736, 436, 298, 932, 555, 396, 272],
+          false
+        ]
+      }
+    ],
+    "greeting": "Hello, Gardner Tate! You have 6 unread messages.",
+    "favoriteFruit": "apple"
+  },
+  {
+    "_id": "5fd26bd66b8f71e565e0c639",
+    "index": 1,
+    "guid": "28311672-2fbb-4acb-8d4f-634029d3fa8e",
+    "isActive": false,
+    "balance": "$2,715.20",
+    "picture": "http://placehold.it/32x32",
+    "age": 39,
+    "eyeColor": "green",
+    "name": "Judy Pratt",
+    "gender": "female",
+    "company": "PHUEL",
+    "email": "judypratt@phuel.com",
+    "phone": "+1 (851) 545-3725",
+    "address": "630 Brooklyn Avenue, Worton, Palau, 6547",
+    "about": "Ex deserunt ad irure sit voluptate. Aliqua culpa nisi aute minim anim mollit. Eiusmod cillum minim enim pariatur incididunt culpa in. Eu cillum culpa officia voluptate ut exercitation ex Lorem ipsum anim sit. Consectetur veniam qui qui aliqua aute minim. Aliqua quis adipisicing nostrud proident cupidatat velit qui id proident labore dolore.\r\n",
+    "registered": "2020-01-16T03:00:57 -01:00",
+    "latitude": 20.842188,
+    "longitude": -138.123639,
+    "tags": ["esse", "dolore", "do", "et", "sit", "pariatur", "dolore"],
+    "friends": [
+      {
+        "id": 0,
+        "name": "Eva Irwin",
+        "luckyNumbers": [292, 730, 537, 398, 798, 178, 721, 423, 612, 273],
+        "moreFriends": [
+          false,
+          [843, 511, 452, 175, 228, 467, 580, 615, 112, 930],
+          {
+            "id": 2,
+            "name": "Burt Strickland",
+            "luckyNumbers": [274, 465, 208, 508, 681, 754, 988, 629, 461, 816]
+          },
+          false,
+          [501, 976, 236, 246, 673, 600, 122, 713, 754, 956],
+          true
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Flynn Adkins",
+        "luckyNumbers": [94, 908, 207, 307, 96, 719, 262, 364, 318, 484],
+        "moreFriends": [
+          false,
+          [603, 952, 219, 27, 118, 725, 314, 491, 469, 491],
+          {
+            "id": 2,
+            "name": "Eula Andrews",
+            "luckyNumbers": [99, 849, 991, 786, 374, 296, 302, 750, 543, 801]
+          },
+          false,
+          [441, 96, 954, 49, 381, 562, 399, 383, 799, 330],
+          true
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Bullock Garrett",
+        "luckyNumbers": [63, 138, 653, 834, 21, 511, 142, 675, 615, 693],
+        "moreFriends": [
+          true,
+          [320, 109, 161, 390, 443, 669, 252, 223, 675, 40],
+          {
+            "id": 2,
+            "name": "Sonja Garza",
+            "luckyNumbers": [473, 907, 205, 324, 292, 100, 805, 220, 155, 644]
+          },
+          true,
+          [476, 725, 753, 75, 816, 523, 375, 329, 250, 946],
+          false
+        ]
+      }
+    ],
+    "greeting": "Hello, Judy Pratt! You have 9 unread messages.",
+    "favoriteFruit": "apple"
+  }
+]
