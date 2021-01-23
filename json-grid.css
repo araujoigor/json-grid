@@ -36,18 +36,18 @@
   display: none;
 }
 
-.json-grid-container span.string {
+.json-grid-container .string {
   color: #a31515;
 }
 
-.json-grid-container span.number {
+.json-grid-container .number {
   color: #09885a;
 }
 
-.json-grid-container span.boolean {
+.json-grid-container .boolean {
   color: #0000ff;
 }
 
-.json-grid-container span.undefined {
+.json-grid-container .undefined {
   color: #cccccc;
 }

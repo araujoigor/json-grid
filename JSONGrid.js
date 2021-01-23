@@ -82,6 +82,18 @@ var DOMHelper = {
   },
 };
 
+/**
+ * Constructor of the JSONGrid class, storing the data to be rendered as a grid,
+ * the container that will contain the grid and the instance's own number.
+ *
+ * It also stores the number of created instances on a static property.
+ *
+ * The instance number is used to tell the expander DOM entity, when clicked, which
+ * instance to hide/show.
+ *
+ * @param {Object|Array} data - Data to turn into a grid
+ * @param {HTMLElement} container - HTML element to hold the grid DOM Tree
+ */
 function JSONGrid(data, container) {
   this.data = data;
   this.container = container instanceof HTMLElement ? container : null;
@@ -92,7 +104,7 @@ function JSONGrid(data, container) {
 JSONGrid.prototype.processArray = function () {
   var keys = this.data
     .reduce(function (acc, val) {
-      if (typeof val !== 'object') {
+      if (typeof val !== 'object' || !val) {
         return acc;
       }
       var keys = Object.keys(val);
@@ -137,14 +149,16 @@ JSONGrid.prototype.processArray = function () {
     );
 
     keys.forEach(function (key) {
-      tr.appendChild(
-        DOMHelper.createJsonGridContainerElement(
-          obj[key],
-          'td',
-          typeof obj,
-          'table-wrapper'
-        )
-      );
+      if (obj) {
+        tr.appendChild(
+          DOMHelper.createJsonGridContainerElement(
+            obj[key],
+            'td',
+            '',
+            'table-wrapper'
+          )
+        );
+      }
     });
 
     return tr;
@@ -164,7 +178,7 @@ JSONGrid.prototype.processObject = function () {
       DOMHelper.createJsonGridContainerElement(key, 'td', 'string', 'header')
     );
     tr.appendChild(
-      DOMHelper.createJsonGridContainerElement(data[key], 'td', typeof value)
+      DOMHelper.createJsonGridContainerElement(data[key], 'td')
     );
     return tr;
   });
