@@ -1,5 +1,5 @@
 const data = require('./__data__/complexJson.json');
-const { JSONGrid } = require('../JSONGrid');
+const { JSONGrid, DOMHelper } = require('../JSONGrid');
 
 afterEach(() => {
   JSONGrid.instances = 0;
@@ -149,4 +149,39 @@ describe('processArray', () => {
       });
     });
   });
+});
+
+describe('processObject', () => {
+  it('should create and array of rows for each key-pair value in the object', () => {
+    const __this = { data: {
+      numValue: 1,
+      strValue: 'value',
+      undefinedValue: undefined,
+      nullValue: null,
+      trueValue: true,
+      falseValue: false,
+      obj: { a: 1, b: '2', c: ['a', 1, 2, false] },
+      array: [1, '2', null, false, true , { a: 1, b: '2' }],
+    }};
+    const dataKeys = Object.keys(__this.data);
+
+    const {
+      rows,
+    } = JSONGrid.prototype.processObject.apply(__this);
+    
+    // -- Reset instance counter to compare each row against 
+    // -- the createJsonGridContainerElement implementation
+    JSONGrid.instances = 0;
+
+    expect(rows.length).toEqual(Object.keys(__this.data).length);
+    rows.forEach((tableRow, idx) => {
+      expect(tableRow.children.length).toEqual(2);
+      expect(tableRow.children[0]).toEqual(DOMHelper.createJsonGridContainerElement(dataKeys[idx], 'td', 'string', 'header'));
+      expect(tableRow.children[1]).toEqual(DOMHelper.createJsonGridContainerElement(__this.data[dataKeys[idx]], 'td'));
+    });
+  })
+});
+
+describe('generateDOM', () => {
+  it('should', () => {});
 });
