@@ -80,10 +80,7 @@ JSONGrid.prototype.processArray = function () {
 
     keys.forEach(function (key, keyIdx) {
       var td = DOMHelper.createElement('td', typeof obj, 'table-wrapper');
-      var value = (obj[key] === undefined || obj[key] === null)
-        ? '' + obj[key]
-        : obj[key]
-        ;
+      var value = obj[key];
       td.appendChild(new JSONGrid(value).generateDOM());
       tr.appendChild(td);
     });
@@ -140,14 +137,15 @@ JSONGrid.prototype.processObject = function () {
 
 JSONGrid.prototype.generateDOM = function () {
   var dom;
+  var dataType = this.data === null ? 'null' : typeof this.data; // typeof null is also 'object'
 
   if (Array.isArray(this.data)) {
     dom = this.processArray();
-  } else if (typeof this.data === 'object') {
+  } else if (dataType === 'object') {
     dom = this.processObject();
   } else {
     // -- Create a span element and early return since this is a "leaf"
-    var span = DOMHelper.createElement('span', typeof this.data);
+    var span = DOMHelper.createElement('span', dataType);
     span.textContent = '' + this.data;
     return span;
   }
