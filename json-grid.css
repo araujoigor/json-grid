@@ -44,3 +44,7 @@
 .json-grid-container span.boolean {
   color: #0000ff;
 }
+
+.json-grid-container span.expander {
+  cursor: pointer;
+}
