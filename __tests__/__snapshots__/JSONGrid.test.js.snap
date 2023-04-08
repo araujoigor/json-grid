@@ -1,5 +1,953 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`generateDOM should create the right DOM wrapping structure within the container 1`] = `
+<span
+  class="string"
+>
+  text
+</span>
+`;
+
+exports[`generateDOM should create the right DOM wrapping structure within the container 2`] = `
+<span
+  class="number"
+>
+  0
+</span>
+`;
+
+exports[`generateDOM should create the right DOM wrapping structure within the container 3`] = `
+<div
+  class="json-grid-element-container"
+>
+  <span
+    class="expander"
+    data-target-id="table-2"
+  >
+    [+] 8 items
+  </span>
+  <table
+    class="shrinked table"
+    id="table-2"
+  >
+    <tbody>
+      <tr>
+        <th />
+        <th />
+        <th
+          class="header string"
+        >
+          <span
+            class="value string"
+          >
+            data
+          </span>
+        </th>
+        <th
+          class="header string"
+        >
+          <span
+            class="value string"
+          >
+            tab
+          </span>
+        </th>
+        <th
+          class="header string"
+        >
+          <span
+            class="value string"
+          >
+            0
+          </span>
+        </th>
+        <th
+          class="header string"
+        >
+          <span
+            class="value string"
+          >
+            1
+          </span>
+        </th>
+        <th
+          class="header string"
+        >
+          <span
+            class="value string"
+          >
+            2
+          </span>
+        </th>
+      </tr>
+      <tr>
+        <td
+          class="header number"
+        >
+          <span
+            class="value number"
+          >
+            0
+          </span>
+        </td>
+        <td
+          class="object"
+        >
+          <div
+            class="json-grid-element-container"
+          >
+            <span
+              class="expander"
+              data-target-id="table-3"
+            >
+              [+] 2 items
+            </span>
+            <table
+              class="shrinked table"
+              id="table-3"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="header string"
+                  >
+                    <span
+                      class="value string"
+                    >
+                      data
+                    </span>
+                  </td>
+                  <td>
+                    <span
+                      class="value string"
+                    >
+                      data
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="header string"
+                  >
+                    <span
+                      class="value string"
+                    >
+                      tab
+                    </span>
+                  </td>
+                  <td>
+                    <span
+                      class="value string"
+                    >
+                      tab
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value string"
+          >
+            data
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value string"
+          >
+            tab
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="header number"
+        >
+          <span
+            class="value number"
+          >
+            1
+          </span>
+        </td>
+        <td
+          class="object"
+        >
+          <div
+            class="json-grid-element-container"
+          >
+            <span
+              class="expander"
+              data-target-id="table-4"
+            >
+              [+] 2 items
+            </span>
+            <table
+              class="shrinked table"
+              id="table-4"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="header string"
+                  >
+                    <span
+                      class="value string"
+                    >
+                      data
+                    </span>
+                  </td>
+                  <td>
+                    <span
+                      class="value string"
+                    >
+                      data1
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="header string"
+                  >
+                    <span
+                      class="value string"
+                    >
+                      tab
+                    </span>
+                  </td>
+                  <td>
+                    <span
+                      class="value string"
+                    >
+                      tab1
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value string"
+          >
+            data1
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value string"
+          >
+            tab1
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="header number"
+        >
+          <span
+            class="value number"
+          >
+            2
+          </span>
+        </td>
+        <td
+          class="object"
+        >
+          <div
+            class="json-grid-element-container"
+          >
+            <span
+              class="expander"
+              data-target-id="table-5"
+            >
+              [+] 3 items
+            </span>
+            <table
+              class="shrinked table"
+              id="table-5"
+            >
+              <tbody>
+                <tr>
+                  <th />
+                  <th />
+                </tr>
+                <tr>
+                  <td
+                    class="header number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      0
+                    </span>
+                  </td>
+                  <td
+                    class="number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      1
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="header number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      1
+                    </span>
+                  </td>
+                  <td
+                    class="number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      2
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="header number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      2
+                    </span>
+                  </td>
+                  <td
+                    class="number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      3
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value number"
+          >
+            1
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value number"
+          >
+            2
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value number"
+          >
+            3
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="header number"
+        >
+          <span
+            class="value number"
+          >
+            3
+          </span>
+        </td>
+        <td
+          class="string"
+        >
+          <span
+            class="value string"
+          >
+            test
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value string"
+          >
+            t
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value string"
+          >
+            e
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value string"
+          >
+            s
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="header number"
+        >
+          <span
+            class="value number"
+          >
+            4
+          </span>
+        </td>
+        <td
+          class="number"
+        >
+          <span
+            class="value number"
+          >
+            1
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+        <td
+          class="table-wrapper"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="header number"
+        >
+          <span
+            class="value number"
+          >
+            5
+          </span>
+        </td>
+        <td
+          class="boolean"
+        >
+          <span
+            class="value boolean"
+          >
+            false
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="header number"
+        >
+          <span
+            class="value number"
+          >
+            6
+          </span>
+        </td>
+        <td
+          class="object"
+        >
+          <span
+            class="value object"
+          >
+            null
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="header number"
+        >
+          <span
+            class="value number"
+          >
+            7
+          </span>
+        </td>
+        <td
+          class="undefined"
+        >
+          <span
+            class="value undefined"
+          >
+            undefined
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`generateDOM should create the right DOM wrapping structure within the container 4`] = `
+<div
+  class="json-grid-element-container"
+>
+  <span
+    class="expander"
+    data-target-id="table-6"
+  >
+    [+] 5 items
+  </span>
+  <table
+    class="shrinked table"
+    id="table-6"
+  >
+    <tbody>
+      <tr>
+        <td
+          class="header string"
+        >
+          <span
+            class="value string"
+          >
+            data
+          </span>
+        </td>
+        <td>
+          <span
+            class="value string"
+          >
+            data
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="header string"
+        >
+          <span
+            class="value string"
+          >
+            tab
+          </span>
+        </td>
+        <td>
+          <span
+            class="value string"
+          >
+            tab
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="header string"
+        >
+          <span
+            class="value string"
+          >
+            arr
+          </span>
+        </td>
+        <td>
+          <div
+            class="json-grid-element-container"
+          >
+            <span
+              class="expander"
+              data-target-id="table-7"
+            >
+              [+] 9 items
+            </span>
+            <table
+              class="shrinked table"
+              id="table-7"
+            >
+              <tbody>
+                <tr>
+                  <th />
+                  <th />
+                </tr>
+                <tr>
+                  <td
+                    class="header number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      0
+                    </span>
+                  </td>
+                  <td
+                    class="string"
+                  >
+                    <span
+                      class="value string"
+                    >
+                      a
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="header number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      1
+                    </span>
+                  </td>
+                  <td
+                    class="string"
+                  >
+                    <span
+                      class="value string"
+                    >
+                      b
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="header number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      2
+                    </span>
+                  </td>
+                  <td
+                    class="string"
+                  >
+                    <span
+                      class="value string"
+                    >
+                      c
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="header number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      3
+                    </span>
+                  </td>
+                  <td
+                    class="number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      1
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="header number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      4
+                    </span>
+                  </td>
+                  <td
+                    class="number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      2
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="header number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      5
+                    </span>
+                  </td>
+                  <td
+                    class="boolean"
+                  >
+                    <span
+                      class="value boolean"
+                    >
+                      false
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="header number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      6
+                    </span>
+                  </td>
+                  <td
+                    class="object"
+                  >
+                    <span
+                      class="value object"
+                    >
+                      null
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="header number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      7
+                    </span>
+                  </td>
+                  <td
+                    class="number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      0
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    class="header number"
+                  >
+                    <span
+                      class="value number"
+                    >
+                      8
+                    </span>
+                  </td>
+                  <td
+                    class="undefined"
+                  >
+                    <span
+                      class="value undefined"
+                    >
+                      undefined
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="header string"
+        >
+          <span
+            class="value string"
+          >
+            falsy
+          </span>
+        </td>
+        <td>
+          <span
+            class="value boolean"
+          >
+            false
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="header string"
+        >
+          <span
+            class="value string"
+          >
+            nully
+          </span>
+        </td>
+        <td>
+          <span
+            class="value object"
+          >
+            null
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`it should properly build the component tree 1`] = `
 "
     <div id=\\"container\\" class=\\"json-grid-container\\"><div class=\\"json-grid-element-container\\"><span class=\\"expander\\" data-target-id=\\"table-0\\">[-] 2 items</span><table class=\\"table\\" id=\\"table-0\\"><tbody><tr><th></th><th></th><th class=\\"header string\\"><span class=\\"value string\\">_id</span></th><th class=\\"header string\\"><span class=\\"value string\\">index</span></th><th class=\\"header string\\"><span class=\\"value string\\">guid</span></th><th class=\\"header string\\"><span class=\\"value string\\">isActive</span></th><th class=\\"header string\\"><span class=\\"value string\\">balance</span></th><th class=\\"header string\\"><span class=\\"value string\\">picture</span></th><th class=\\"header string\\"><span class=\\"value string\\">age</span></th><th class=\\"header string\\"><span class=\\"value string\\">eyeColor</span></th><th class=\\"header string\\"><span class=\\"value string\\">name</span></th><th class=\\"header string\\"><span class=\\"value string\\">gender</span></th><th class=\\"header string\\"><span class=\\"value string\\">company</span></th><th class=\\"header string\\"><span class=\\"value string\\">email</span></th><th class=\\"header string\\"><span class=\\"value string\\">phone</span></th><th class=\\"header string\\"><span class=\\"value string\\">address</span></th><th class=\\"header string\\"><span class=\\"value string\\">about</span></th><th class=\\"header string\\"><span class=\\"value string\\">registered</span></th><th class=\\"header string\\"><span class=\\"value string\\">latitude</span></th><th class=\\"header string\\"><span class=\\"value string\\">longitude</span></th><th class=\\"header string\\"><span class=\\"value string\\">tags</span></th><th class=\\"header string\\"><span class=\\"value string\\">wow</span></th><th class=\\"header string\\"><span class=\\"value string\\">f</span></th><th class=\\"header string\\"><span class=\\"value string\\">friends</span></th><th class=\\"header string\\"><span class=\\"value string\\">greeting</span></th><th class=\\"header string\\"><span class=\\"value string\\">favoriteFruit</span></th></tr><tr><td class=\\"header number\\"><span class=\\"value number\\">0</span></td><td class=\\"object\\"><div class=\\"json-grid-element-container\\"><span class=\\"expander\\" data-target-id=\\"table-1\\">[+] 24 items</span><table class=\\"shrinked table\\" id=\\"table-1\\"><tbody><tr><td class=\\"header string\\"><span class=\\"value string\\">_id</span></td><td><span class=\\"value string\\">5fd26bd6eaa1e4038be4d30b</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">index</span></td><td><span class=\\"value number\\">0</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">guid</span></td><td><span class=\\"value string\\">5cd8ac75-a5a8-41e1-8785-4df8a11adee1</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">isActive</span></td><td><span class=\\"value boolean\\">true</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">balance</span></td><td><span class=\\"value string\\">$3,009.86</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">picture</span></td><td><span class=\\"value string\\">http://placehold.it/32x32</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">age</span></td><td><span class=\\"value number\\">23</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">eyeColor</span></td><td><span class=\\"value string\\">green</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">name</span></td><td><span class=\\"value string\\">Gardner Tate</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">gender</span></td><td><span class=\\"value string\\">male</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">company</span></td><td><span class=\\"value object\\">null</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">email</span></td><td><span class=\\"value string\\">gardnertate@frolix.com</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">phone</span></td><td><span class=\\"value string\\">+1 (954) 477-3385</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">address</span></td><td><span class=\\"value string\\">880 Cornelia Street, Kingstowne, Guam, 5730</span></td></tr><tr><td class=\\"header string\\"><span class=\\"value string\\">about</span></td><td><span class=\\"value string\\">Adipisicing ut proident reprehenderit dolore reprehenderit et laborum dolor. Culpa ullamco fugiat excepteur fugiat sint aliquip occaecat tempor aute excepteur pariatur anim non. Esse proident elit voluptate nostrud labore culpa aute duis officia. Magna consequat nostrud amet magna ipsum commodo nisi do laboris aute officia eu nulla ut. Tempor irure nisi commodo magna ut Lorem ad anim mollit velit ullamco. Id et do consequat pariatur do sit.

@@ -17,6 +17,10 @@ test('it should properly build the component tree', () => {
   expect(document.body.innerHTML).toMatchSnapshot();
 });
 
+it('should populate window if it exist', () => {
+  expect(new JSONGrid()).toBeInstanceOf(window.JSONGrid);
+})
+
 describe('constructor', () => {
   it('should increase the number of instances as they are created', () => {
     [1, 2, 3].forEach((_, idx) => {
@@ -153,35 +157,149 @@ describe('processArray', () => {
 
 describe('processObject', () => {
   it('should create and array of rows for each key-pair value in the object', () => {
-    const __this = { data: {
-      numValue: 1,
-      strValue: 'value',
-      undefinedValue: undefined,
-      nullValue: null,
-      trueValue: true,
-      falseValue: false,
-      obj: { a: 1, b: '2', c: ['a', 1, 2, false] },
-      array: [1, '2', null, false, true , { a: 1, b: '2' }],
-    }};
+    const __this = {
+      data: {
+        numValue: 1,
+        strValue: 'value',
+        undefinedValue: undefined,
+        nullValue: null,
+        trueValue: true,
+        falseValue: false,
+        obj: { a: 1, b: '2', c: ['a', 1, 2, false] },
+        array: [1, '2', null, false, true, { a: 1, b: '2' }],
+      },
+    };
     const dataKeys = Object.keys(__this.data);
 
-    const {
-      rows,
-    } = JSONGrid.prototype.processObject.apply(__this);
-    
-    // -- Reset instance counter to compare each row against 
+    const { rows } = JSONGrid.prototype.processObject.apply(__this);
+
+    // -- Reset instance counter to compare each row against
     // -- the createJsonGridContainerElement implementation
     JSONGrid.instances = 0;
 
     expect(rows.length).toEqual(Object.keys(__this.data).length);
     rows.forEach((tableRow, idx) => {
       expect(tableRow.children.length).toEqual(2);
-      expect(tableRow.children[0]).toEqual(DOMHelper.createJsonGridContainerElement(dataKeys[idx], 'td', 'string', 'header'));
-      expect(tableRow.children[1]).toEqual(DOMHelper.createJsonGridContainerElement(__this.data[dataKeys[idx]], 'td'));
+      expect(tableRow.children[0]).toEqual(
+        DOMHelper.createJsonGridContainerElement(
+          dataKeys[idx],
+          'td',
+          'string',
+          'header'
+        )
+      );
+      expect(tableRow.children[1]).toEqual(
+        DOMHelper.createJsonGridContainerElement(
+          __this.data[dataKeys[idx]],
+          'td'
+        )
+      );
     });
-  })
+  });
 });
 
 describe('generateDOM', () => {
-  it('should', () => {});
+  const processArraySpy = jest.spyOn(JSONGrid.prototype, 'processArray');
+  const processObjectSpy = jest.spyOn(JSONGrid.prototype, 'processObject');
+  const createElementSpy = jest.spyOn(DOMHelper, 'createElement');
+
+  afterEach(() => {
+    processArraySpy.mockClear();
+    processObjectSpy.mockClear();
+    createElementSpy.mockClear();
+  });
+
+  it('should create the right DOM wrapping structure within the container', () => {
+    const data1 = 'text';
+    const data2 = 0;
+    const data3 = [
+      { data: 'data', tab: 'tab' },
+      { data: 'data1', tab: 'tab1' },
+      [1, 2, 3],
+      'test',
+      1,
+      false,
+      null,
+      undefined,
+    ];
+    const data4 = {
+      data: 'data',
+      tab: 'tab',
+      arr: ['a', 'b', 'c', 1, 2, false, null, 0, undefined],
+      falsy: false,
+      nully: null,
+    };
+
+    const dom1 = new JSONGrid(data1).generateDOM();
+    const dom2 = new JSONGrid(data2).generateDOM();
+    const dom3 = new JSONGrid(data3).generateDOM();
+    const dom4 = new JSONGrid(data4).generateDOM();
+
+    expect(dom1).toMatchSnapshot();
+    expect(dom2).toMatchSnapshot();
+    expect(dom3).toMatchSnapshot();
+    expect(dom4).toMatchSnapshot();
+  });
+
+  it('should only call processObject when initialized with an object', () => {
+    new JSONGrid({ key1: 'data1', key2: 'data2' }).generateDOM();
+    expect(processObjectSpy).toHaveBeenCalled();
+    expect(processArraySpy).not.toHaveBeenCalled();
+    expect(createElementSpy.mock.calls.length).toBeGreaterThan(0);
+  });
+
+  it('should only call processArray when initialized with an array', () => {
+    new JSONGrid([1, 2, 3]).generateDOM();
+    expect(processArraySpy).toHaveBeenCalled();
+    expect(processObjectSpy).not.toHaveBeenCalled();
+    expect(createElementSpy.mock.calls.length).toBeGreaterThan(0);
+  });
+
+  it('should only call createElement when initialized with scalar values', () => {
+    new JSONGrid('test').generateDOM();
+    expect(processArraySpy).not.toHaveBeenCalled();
+    expect(processObjectSpy).not.toHaveBeenCalled();
+    expect(createElementSpy.mock.calls.length).toEqual(1);
+
+    new JSONGrid(0).generateDOM();
+    expect(processArraySpy).not.toHaveBeenCalled();
+    expect(processObjectSpy).not.toHaveBeenCalled();
+    expect(createElementSpy.mock.calls.length).toEqual(2);
+  });
+});
+
+describe('render', () => {
+  const spy = jest.spyOn(JSONGrid.prototype, 'generateDOM');
+
+  beforeEach(() => {
+    spy.mockClear();
+  });
+
+  it('should fill the container with generateDOM return value and append JSON_GRID_CONTAINER_CLASSNAME to the class list', () => {
+    const container = DOMHelper.createElement('div', null, 'container');
+    new JSONGrid('data', container).render();
+
+    expect(container.classList).toContain(
+      DOMHelper.JSON_GRID_CONTAINER_CLASSNAME
+    );
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('should not do anything if the data is null or undefined', () => {
+    const container = DOMHelper.createElement('div', null, 'container');
+    new JSONGrid(null, container).render();
+    new JSONGrid(undefined, container).render();
+
+    expect(container.classList).not.toContain(
+      DOMHelper.JSON_GRID_CONTAINER_CLASSNAME
+    );
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('should not do anything if the container is null or undefined', () => {
+    new JSONGrid('test', undefined).render();
+    new JSONGrid('test', null).render();
+
+    expect(spy).not.toHaveBeenCalled();
+  });
 });
