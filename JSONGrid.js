@@ -230,7 +230,7 @@ JSONGrid.prototype.generateDOM = function () {
 };
 
 JSONGrid.prototype.render = function () {
-  if (!this.container || !this.data) {
+  if (!this.container || this.data === undefined || this.data === null) {
     return;
   }
 
