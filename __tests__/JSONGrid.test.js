@@ -19,7 +19,7 @@ test('it should properly build the component tree', () => {
 
 it('should populate window if it exist', () => {
   expect(new JSONGrid()).toBeInstanceOf(window.JSONGrid);
-})
+});
 
 describe('constructor', () => {
   it('should increase the number of instances as they are created', () => {
