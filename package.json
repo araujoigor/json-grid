@@ -6,7 +6,7 @@
   "unpkg": "dist/JSONGrid.min.js",
   "scripts": {
     "test": "jest . --passWithNoTests",
-    "lint": "eslint *.js",
+    "lint": "eslint tests/**/*.js *.js",
     "clean": "rm dist/* || true",
     "build": "mkdir -p dist/ && uglifyjs JSONGrid.js -o ./dist/JSONGrid.min.js -c -m && cp ./{json-grid.css,JSONGrid.js} dist/",
     "prepublish": "npm run lint && npm run test && npm run clean && npm run build"
@@ -33,6 +33,7 @@
     "eslint": "^7.26.0",
     "eslint-plugin-compat": "^3.9.0",
     "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
     "uglify-js": "^3.13.5"
   },
   "files": [

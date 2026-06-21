@@ -240,3 +240,8 @@ JSONGrid.prototype.collapseAll = function () {
 };
 
 window.JSONGrid = JSONGrid;
+
+if (typeof module !== 'undefined') {
+  module.exports.JSONGrid = JSONGrid;
+  module.exports.DOMHelper = DOMHelper;
+}

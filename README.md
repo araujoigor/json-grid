@@ -33,12 +33,13 @@ A simple usage case would be:
 
   <body>
     <div id="container"></div>
-    <script>
-      var container = document.getElementById("container");
-      <div style="display: flex; width: 300px">
+    <div style="display: flex; width: 300px">
         <button onclick="expandAll()">Expand All</button>
         <button onclick="collapseAll()">Collapse All</button>
       </div>
+    <script>
+      var container = document.getElementById("container");
+      
       var data = {
         sport: "Formula 1",
         GP: "Brazilian GP - Interlagos",
